@@ -1,11 +1,15 @@
 package factory;
 
+import java.io.File;
+import org.apache.commons.io.FileUtils;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -108,6 +112,39 @@ public class DriverFactory {
 			e.printStackTrace();
 		}
 		return prop;
+	}
+	
+	
+	/**
+	 * take screenshot
+	 */
+	public static String getScreenshot(String methodName) {
+		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+		//Users/naveenautomationlabs/Documents/workspace1/
+		String path = System.getProperty("user.dir")+"/screenshot/" + methodName +System.currentTimeMillis()+ ".png";
+		System.out.println("HERE IS THE PATH ********" +path);
+		File destination = new File(path);
+		try {
+			FileUtils.copyFile(srcFile, destination);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return path;
+	}
+	
+	public static File getScreenshotFile() {
+		File srcFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);// temp dir
+		return srcFile;
+	}
+
+	public static byte[] getScreenshotByte() {
+		return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);// temp dir
+
+	}
+
+	public static String getScreenshotBase64() {
+		return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BASE64);// temp dir
+
 	}
 
 }

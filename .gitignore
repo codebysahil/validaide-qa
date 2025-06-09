@@ -22,3 +22,8 @@ logs/
 # Others
 test-output/
 
+# Allure results and reports
+.allure-results/
+allure-report/
+
+

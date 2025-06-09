@@ -36,7 +36,10 @@ public class BaseTest {
 	@AfterClass
 	public void teardown() {
 		
+		System.out.println("in teardown");
+		
 		driver.quit();
+		System.out.println("teardown exit");
 	}
 	
 

@@ -2,6 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Validaide Websire Test Regression Suite" thread-count="3" parallel="tests" verbose="4">
+<listeners>
+ <listener class-name="listeners.ExtentReportListener"></listener>
+<listener class-name="listeners.TestAllureListener"></listener> 
+
+</listeners>
+
 
 
 	
@@ -10,14 +16,14 @@
 		<classes>
 		<class name="tests.HomePageTest"></class>
 		</classes>
-	</test>
+	</test>  
 	
-	<!-- <test name="Login Page Test">
+	<test name="Login Page Test">
 	<parameter name="urlKey" value="urlloginpage"/>
 		<classes>
 		<class name="tests.LoginPageTest"></class>
 		</classes>
-	</test> -->
+	</test>
 
 
 </suite>
