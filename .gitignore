@@ -1,0 +1,24 @@
+# Maven
+/target/
+
+# Eclipse
+*.classpath
+*.project
+*.settings/
+*.log
+
+# IntelliJ
+*.iml
+.idea/
+
+# OS
+.DS_Store
+
+# Logs
+logs/
+*.log
+*.tmp
+
+# Others
+test-output/
+
