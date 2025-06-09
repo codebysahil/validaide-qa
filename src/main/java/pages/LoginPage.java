@@ -14,6 +14,7 @@ public class LoginPage {
 	private By email = By.id("1-email");
 	private By password = By.id("1-password");
 	private By loginBTN= By.xpath("//button[@id='1-submit']");
+	
 	// private By invalidLoginMessage = By.cssSelector("span[class='animated fadeInUp'] span");
 	private By invalidLoginMessage= By.xpath("//span[contains(text(),'Wrong email or password.')]");
 	

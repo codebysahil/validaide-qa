@@ -22,6 +22,7 @@ public class HomePage {
 	private By loginButton = By.linkText("Login");
 	private By validaideLogo = By.cssSelector("img[alt='Validaide logo']");
 	private By layeredComponent = By.cssSelector("div[id='bgLayers_comp-m8d2k7ui'] div[class='tcElKx i1tH8h']");
+	private By randomBtn= By.linkText("Login");
 
 	public boolean isLoginButtonAvailable() {
 		// return driver.findElement(loginButton).isDisplayed();
