@@ -24,17 +24,16 @@ pipeline {
                 echo("Deploying to QA...")
             }
         }
-
-        stage('Regression Automation Test') {
-            steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    dir('validaide-qa') {
-                        git url: 'https://github.com/codebysahil/validaide-qa.git'
-                        sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_sanity.xml"
-                    }
-                }
+stage('Regression Automation Test') {
+    steps {
+        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+            dir('validaide-qa') {
+                git branch: 'main', url: 'https://github.com/codebysahil/validaide-qa.git'
+                sh 'mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_sanity.xml'
             }
         }
+    }
+}
 
         stage('Publish Allure Reports') {
             steps {
@@ -74,7 +73,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     dir('validaide-qa') {
-                        git url: 'https://github.com/codebysahil/validaide-qa.git'
+                         git branch: 'main', git url: 'https://github.com/codebysahil/validaide-qa.git'
                         sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_sanity.xml"
                     }
                 }
