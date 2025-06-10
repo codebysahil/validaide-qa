@@ -37,7 +37,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'hhttps://github.com/codebysahil/validaide-qa.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_regression.xml"
+                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_sanity.xml"
                     
                 }
             }
