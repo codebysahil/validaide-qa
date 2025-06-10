@@ -36,7 +36,7 @@ pipeline
         stage('Regression Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'hhttps://github.com/codebysahil/validaide-qa.git'
+                    git 'https://github.com/codebysahil/validaide-qa.git'
                     sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/testng_sanity.xml"
                     
                 }
