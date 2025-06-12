@@ -9,7 +9,7 @@ public class LoginPageTest extends BaseTest {
 	
 	@Test
 	public void verifyInvalidLoginTextTest() {
-		Assert.assertEquals(lp.checkInvalidLoginMessage(), "WRONG EMAIL OR PASSWORD.");
+		Assert.assertEquals(lp.checkInvalidLoginMessage(), "WRON EMAIL OR PASSWORD.");
 	}
 
 }

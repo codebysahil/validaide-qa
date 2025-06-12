@@ -26,4 +26,10 @@ test-output/
 .allure-results/
 allure-report/
 
+ajcore.*.txt
+# Ignore Allure results
+allure-results/
+
+# Ignore screenshots from test runs
+screenshot/
 
